@@ -37,12 +37,34 @@ class Mark {
     //one idea: find the box coordinates and replace them;
     //another idea: find the rotate camera method in proscene;
 
+    //*CALCULATE THE BOX UP HERE; (?)
+    //TEXT w/two rotations:
+    pushMatrix();
+    translate(convertedTweetCoordiante.x()-textWidth(sign_text)/2, convertedTweetCoordiante.y(), sign_height);
+    rotateX(radians(-90));
+    translate(textWidth(sign_text)/2, 0, 0);
+    rotateY(radians(sign_rot));
+    translate(0, 0, 200);
+    box(20);
+    ulx = modelX(0, 0, 0);
+    uly = modelY(0, 0, 0);
+    ulz = modelZ(0, 0, 0);
+    translate(0, 0, -200);
+    translate(-textWidth(sign_text)/2, 0, 0);
+    translate(-convertedTweetCoordiante.x(), -convertedTweetCoordiante.y(), -sign_height);
+    translate(0, 0, sign_height);
+    println(sign_height);
+    text(sign_text, convertedTweetCoordiante.x(), convertedTweetCoordiante.y(), 200, 200); //xy
+    translate(0, 0, -sign_height);
+    popMatrix();
+
     //CAMERA:
     //this is the line that I have to figure out:
     //scene.camera().setPosition(convertedTweetCoordiante.x(), convertedTweetCoordiante.y()+200, sign_height);
     scene.camera().setPosition(ulx, uly, ulz);
-    //
     scene.camera().lookAt(convertedTweetCoordiante.x(), convertedTweetCoordiante.y(), sign_height);
+    //SOME KIND OF XYZ-ORIENTATION METHOD
+    //https://forum.processing.org/one/topic/direct-camera-control-in-proscene.html 
     scene.camera().addKeyFrameToPath(1);
   }
   void display() {
@@ -62,21 +84,18 @@ class Mark {
     rotateX(radians(-90));
     translate(textWidth(sign_text)/2, 0, 0);
     rotateY(radians(sign_rot));
-
     translate(0, 0, 200);
     box(20);
     ulx = modelX(0, 0, 0);
     uly = modelY(0, 0, 0);
     ulz = modelZ(0, 0, 0);
     translate(0, 0, -200);
-
     translate(-textWidth(sign_text)/2, 0, 0);
     translate(-convertedTweetCoordiante.x(), -convertedTweetCoordiante.y(), -sign_height);
     translate(0, 0, sign_height);
     println(sign_height);
     text(sign_text, convertedTweetCoordiante.x(), convertedTweetCoordiante.y(), 200, 200); //xy
     translate(0, 0, -sign_height);
-
     popMatrix();
   }
 }
