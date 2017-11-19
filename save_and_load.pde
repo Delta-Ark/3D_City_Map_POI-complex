@@ -1,4 +1,4 @@
-//>>>>>>>>>>SAVING CAMERA POSITIONS
+//>>>>>>>>>>SAVING CAMERA POSITIONS "BY HAND"
 import processing.data.JSONObject;
 import java.util.Arrays;
 
