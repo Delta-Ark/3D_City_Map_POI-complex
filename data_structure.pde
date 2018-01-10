@@ -12,17 +12,17 @@ final LabelCoord[][] stanzas = new LabelCoord[STANZAS][];
 
 { // dummy stanza two:
   stanzas[1] = new LabelCoord[] {
-    new LabelCoord("1", -122.444216, 37.734181), 
-    new LabelCoord("2", -122.490198, 37.750747)
+    new LabelCoord("1 this is 1 OK", -122.444216, 37.734181), 
+    new LabelCoord("2 this is 2 OK", -122.490198, 37.750747)
   };
 }
 
 { // dummy stanza three:
   stanzas[2] = new LabelCoord[] {
-    new LabelCoord("one", -122.424216, 37.734181), 
-    new LabelCoord("two", -122.470198, 37.750747), 
-    new LabelCoord("three", -122.408789, 37.738618), 
-    new LabelCoord("last", -122.408789, 37.738618)
+    new LabelCoord("one one one one one", -122.424216, 37.734181), 
+    new LabelCoord("two two two two two", -122.470198, 37.750747), 
+    new LabelCoord("three three three three", -122.408789, 37.738618), 
+    new LabelCoord("last last last lat", -122.408789, 37.738618)
   };
 }
 
